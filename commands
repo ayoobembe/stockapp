@@ -1,0 +1,45 @@
+Backend
+  Base: Node
+  Server: Express
+  Dependencies:
+
+Frontend
+  Framework: AngularJS
+  Testing: Karma-Protractor
+  Dependencies:
+
+I)  Basic setup
+  npm init
+  mkdir app scripts test
+  cd ..           ==> {back to top level}
+  touch .bowerrc  ==> {state where bower_components should be}
+  npm install --save-dev bower
+  bower init
+
+II) Front end
+  bower install --save angular
+  bower install --save angular-mocks
+  bower install --save angular-route
+  bower install --save angular-resource
+  bower install --save bootstrap
+
+
+III) Git Stuff
+  touch .gitignore ==> {node_modules/ ; bower_components/}
+
+IV) Testing
+  cd test
+  mkdir e2e unit
+  npm install karma --save-dev
+  npm install karma-chrome-launcher --save-dev
+  npm install karma-jasmine --save-dev
+  touch test/karma.conf.js
+    {configure the karma.conf.js}
+  npm install protractor --save-dev
+  webdriver-manager update
+  touch test/protractor-conf.js
+    {configure the protractor}
+
+Running tests (for now):
+  protractor protractor-conf.js
+  karma test
